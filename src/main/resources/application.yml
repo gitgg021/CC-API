@@ -100,4 +100,8 @@ knife4j:
       default:
         api-rule: package
         api-rule-resources:
-          - com.yupi.springbootinit.controller
+          - com.ccapi.springbootinit.controller
+ccapi:
+  client:
+    access-key: hanhan
+    secret-key: hanhan
