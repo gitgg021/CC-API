@@ -2,13 +2,14 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yupi.springbootinit.mapper.InterfaceInfoMapper">
+<mapper namespace="com.ccapi.springbootinit.mapper.InterfaceInfoMapper">
 
     <resultMap id="BaseResultMap" type="com.ccapi.springbootinit.model.entity.InterfaceInfo">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="description" column="description" jdbcType="VARCHAR"/>
             <result property="url" column="url" jdbcType="VARCHAR"/>
+        <result property="requestParams" column="requestParams" jdbcType="VARCHAR"/>
             <result property="requestHeader" column="requestHeader" jdbcType="VARCHAR"/>
             <result property="responseHeader" column="responseHeader" jdbcType="VARCHAR"/>
             <result property="userId" column="userId" jdbcType="VARCHAR"/>
@@ -23,6 +24,6 @@
         id,name,description,
         url,requestHeader,responseHeader,
         userId,status,method,
-        createTime,updateTime,isDeleted
+        createTime,updateTime,isDeleted,requestParams
     </sql>
 </mapper>
