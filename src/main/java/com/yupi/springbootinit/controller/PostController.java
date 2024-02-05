@@ -131,12 +131,15 @@ public class PostController {
         return ResultUtils.success(result);
     }
 
-    /**
+/*
+    */
+/**
      * 根据 id 获取
      *
      * @param id
      * @return
-     */
+     *//*
+
     @GetMapping("/get/vo")
     public BaseResponse<PostVO> getPostVOById(long id, HttpServletRequest request) {
         if (id <= 0) {
@@ -148,6 +151,7 @@ public class PostController {
         }
         return ResultUtils.success(postService.getPostVO(post, request));
     }
+*/
 
     /**
      * 分页获取列表（仅管理员）
@@ -165,13 +169,16 @@ public class PostController {
         return ResultUtils.success(postPage);
     }
 
-    /**
+/*
+    */
+/**
      * 分页获取列表（封装类）
      *
      * @param postQueryRequest
      * @param request
      * @return
-     */
+     *//*
+
     @PostMapping("/list/page/vo")
     public BaseResponse<Page<PostVO>> listPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
             HttpServletRequest request) {
@@ -183,14 +190,18 @@ public class PostController {
                 postService.getQueryWrapper(postQueryRequest));
         return ResultUtils.success(postService.getPostVOPage(postPage, request));
     }
+*/
 
-    /**
+/*
+    */
+/**
      * 分页获取当前用户创建的资源列表
      *
      * @param postQueryRequest
      * @param request
      * @return
-     */
+     *//*
+
     @PostMapping("/my/list/page/vo")
     public BaseResponse<Page<PostVO>> listMyPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
             HttpServletRequest request) {
@@ -207,16 +218,17 @@ public class PostController {
                 postService.getQueryWrapper(postQueryRequest));
         return ResultUtils.success(postService.getPostVOPage(postPage, request));
     }
+*/
 
     // endregion
-
-    /**
+/*
+    *//**
      * 分页搜索（从 ES 查询，封装类）
      *
      * @param postQueryRequest
      * @param request
      * @return
-     */
+     *//*
     @PostMapping("/search/page/vo")
     public BaseResponse<Page<PostVO>> searchPostVOByPage(@RequestBody PostQueryRequest postQueryRequest,
             HttpServletRequest request) {
@@ -225,7 +237,7 @@ public class PostController {
         ThrowUtils.throwIf(size > 20, ErrorCode.PARAMS_ERROR);
         Page<Post> postPage = postService.searchFromEs(postQueryRequest);
         return ResultUtils.success(postService.getPostVOPage(postPage, request));
-    }
+    }*/
 
     /**
      * 编辑（用户）
@@ -252,10 +264,10 @@ public class PostController {
         // 判断是否存在
         Post oldPost = postService.getById(id);
         ThrowUtils.throwIf(oldPost == null, ErrorCode.NOT_FOUND_ERROR);
-        // 仅本人或管理员可编辑
+       /* // 仅本人或管理员可编辑
         if (!oldPost.getUserId().equals(loginUser.getId()) && !userService.isAdmin(loginUser)) {
             throw new BusinessException(ErrorCode.NO_AUTH_ERROR);
-        }
+        }*/
         boolean result = postService.updateById(post);
         return ResultUtils.success(result);
     }

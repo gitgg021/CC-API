@@ -63,12 +63,12 @@ public class PostFavourController {
         return ResultUtils.success(result);
     }
 
-    /**
+   /* *//**
      * 获取我收藏的帖子列表
      *
      * @param postQueryRequest
      * @param request
-     */
+     *//*
     @PostMapping("/my/list/page")
     public BaseResponse<Page<PostVO>> listMyFavourPostByPage(@RequestBody PostQueryRequest postQueryRequest,
             HttpServletRequest request) {
@@ -83,14 +83,14 @@ public class PostFavourController {
         Page<Post> postPage = postFavourService.listFavourPostByPage(new Page<>(current, size),
                 postService.getQueryWrapper(postQueryRequest), loginUser.getId());
         return ResultUtils.success(postService.getPostVOPage(postPage, request));
-    }
+    }*/
 
-    /**
+/*    *//**
      * 获取用户收藏的帖子列表
      *
      * @param postFavourQueryRequest
      * @param request
-     */
+     *//*
     @PostMapping("/list/page")
     public BaseResponse<Page<PostVO>> listFavourPostByPage(@RequestBody PostFavourQueryRequest postFavourQueryRequest,
             HttpServletRequest request) {
@@ -105,5 +105,5 @@ public class PostFavourController {
         Page<Post> postPage = postFavourService.listFavourPostByPage(new Page<>(current, size),
                 postService.getQueryWrapper(postFavourQueryRequest.getPostQueryRequest()), userId);
         return ResultUtils.success(postService.getPostVOPage(postPage, request));
-    }
+    }*/
 }

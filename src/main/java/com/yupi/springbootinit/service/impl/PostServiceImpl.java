@@ -226,7 +226,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         return page;
     }
 
-    @Override
+   /* @Override
     public PostVO getPostVO(Post post, HttpServletRequest request) {
         PostVO postVO = PostVO.objToVo(post);
         long postId = post.getId();
@@ -303,7 +303,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         }).collect(Collectors.toList());
         postVOPage.setRecords(postVOList);
         return postVOPage;
-    }
+    }*/
 
 }
 
