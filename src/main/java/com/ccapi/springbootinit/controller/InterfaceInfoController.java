@@ -7,6 +7,7 @@ import com.ccapi.springbootinit.common.*;
 import com.ccapi.springbootinit.constant.CommonConstant;
 import com.ccapi.springbootinit.exception.BusinessException;
 import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoAddRequest;
+import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoInvokeRequest;
 import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoQueryRequest;
 import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoUpdateRequest;
 import com.ccapi.springbootinit.model.entity.InterfaceInfo;
@@ -14,6 +15,7 @@ import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.model.enums.InterfaceInfoStatusEnum;
 import com.ccapi.springbootinit.service.InterfaceInfoService;
 import com.ccapi.springbootinit.service.UserService;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -221,13 +223,13 @@ public class InterfaceInfoController {
         if (oldInterfaceInfo == null) {
             throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
         }
-        // 判断该接口是否可以调用
+   /*     // 判断该接口是否可以调用
         com.ccapi.ccapiclientsdk.model.User user = new com.ccapi.ccapiclientsdk.model.User ();
         user.setUsername("test");
         String username = ccapiClient.getUsernameByPost(user);
         if (StringUtils.isBlank(username)) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "接口验证失败");
-        }
+        }*/
         // 仅本人或管理员可修改
         InterfaceInfo interfaceInfo = new InterfaceInfo();
         interfaceInfo.setId(id);
@@ -263,6 +265,44 @@ public class InterfaceInfoController {
         boolean result = interfaceInfoService.updateById(interfaceInfo);
         return ResultUtils.success(result);
     }
+
+
+    /**
+     * 测试调用
+     *
+     * @param interfaceInfoInvokeRequest
+     * @param request
+     * @return
+     */
+    @PostMapping("/invoke")
+    public BaseResponse<Object> invokeInterfaceInfo(@RequestBody InterfaceInfoInvokeRequest interfaceInfoInvokeRequest,
+                                                    HttpServletRequest request) {
+        if (interfaceInfoInvokeRequest == null || interfaceInfoInvokeRequest.getId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        long id = interfaceInfoInvokeRequest.getId();
+        String userRequestParams = interfaceInfoInvokeRequest.getUserRequestParams();
+        // 判断是否存在
+        InterfaceInfo oldInterfaceInfo = interfaceInfoService.getById(id);
+        if (oldInterfaceInfo == null) {
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        if (oldInterfaceInfo.getStatus() == InterfaceInfoStatusEnum.OFFLINE.getValue()) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "接口已关闭");
+        }
+
+        User loginUser = userService.getLoginUser(request);
+        String accessKey = loginUser.getAccessKey();
+        String secretKey = loginUser.getSecretKey();
+        CCAPIClient tempClient = new CCAPIClient(accessKey, secretKey);
+        Gson gson = new Gson();
+
+        com.ccapi.ccapiclientsdk.model.User user = gson.fromJson(userRequestParams, com.ccapi.ccapiclientsdk.model.User.class);
+        String usernameByPost = tempClient.getUsernameByPost(user);
+        return ResultUtils.success(usernameByPost);
+    }
+
+
 
 
 
