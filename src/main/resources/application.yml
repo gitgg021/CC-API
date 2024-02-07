@@ -21,9 +21,9 @@ spring:
   # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ccapi
-    username: xxxx
-    password: "xxxx"
+    url: jdbc:mysql://localhost:3306/xxx
+    username: xxx
+    password: "xxx"
   # Redis 配置
   # todo 需替换配置，然后取消注释
 #  redis:
@@ -103,5 +103,16 @@ knife4j:
           - com.ccapi.springbootinit.controller
 ccapi:
   client:
-    access-key: xxx
-    secret-key: xxx
+    access-key: hanhan
+    secret-key: hanhan
+
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://localhost:8848
+
