@@ -3,6 +3,7 @@ package com.ccapi.springbootinit.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageDTO;
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.common.BaseResponse;
 import com.ccapi.springbootinit.common.DeleteRequest;
 import com.ccapi.springbootinit.common.ErrorCode;
@@ -13,7 +14,6 @@ import com.ccapi.springbootinit.model.dto.user.UserLoginRequest;
 import com.ccapi.springbootinit.model.dto.user.UserQueryRequest;
 import com.ccapi.springbootinit.model.dto.user.UserRegisterRequest;
 import com.ccapi.springbootinit.model.dto.user.UserUpdateRequest;
-import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.model.vo.UserVO;
 import com.ccapi.springbootinit.service.UserService;
 

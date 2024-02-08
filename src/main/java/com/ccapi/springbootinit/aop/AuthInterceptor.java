@@ -1,9 +1,9 @@
 package com.ccapi.springbootinit.aop;
 
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.annotation.AuthCheck;
 import com.ccapi.springbootinit.common.ErrorCode;
 import com.ccapi.springbootinit.exception.BusinessException;
-import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.model.enums.UserRoleEnum;
 import com.ccapi.springbootinit.service.UserService;
 import javax.annotation.Resource;

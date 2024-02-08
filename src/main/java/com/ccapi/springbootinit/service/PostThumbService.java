@@ -1,8 +1,8 @@
 package com.ccapi.springbootinit.service;
 
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.model.entity.PostThumb;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.ccapi.springbootinit.model.entity.User;
 
 /**
  * 帖子点赞服务

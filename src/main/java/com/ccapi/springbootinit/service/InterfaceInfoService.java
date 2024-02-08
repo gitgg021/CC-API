@@ -1,7 +1,7 @@
 package com.ccapi.springbootinit.service;
 
-import com.ccapi.springbootinit.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ccapi.ccapicommon.model.entity.InterfaceInfo;
 
 /**
 * @author 60500

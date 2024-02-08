@@ -1,6 +1,9 @@
 package com.ccapi.springbootinit.controller;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.ccapi.ccapicommon.model.entity.User;
+import com.ccapi.ccapicommon.model.entity.UserInterfaceInfo;
 import com.ccapi.springbootinit.annotation.AuthCheck;
 import com.ccapi.springbootinit.common.BaseResponse;
 import com.ccapi.springbootinit.common.DeleteRequest;
@@ -12,8 +15,6 @@ import com.ccapi.springbootinit.exception.BusinessException;
 import com.ccapi.springbootinit.model.dto.userinterfaceinfo.UserInterfaceInfoAddRequest;
 import com.ccapi.springbootinit.model.dto.userinterfaceinfo.UserInterfaceInfoQueryRequest;
 import com.ccapi.springbootinit.model.dto.userinterfaceinfo.UserInterfaceInfoUpdateRequest;
-import com.ccapi.springbootinit.model.entity.User;
-import com.ccapi.springbootinit.model.entity.UserInterfaceInfo;
 import com.ccapi.springbootinit.service.UserInterfaceInfoService;
 import com.ccapi.springbootinit.service.UserService;
 import lombok.extern.slf4j.Slf4j;

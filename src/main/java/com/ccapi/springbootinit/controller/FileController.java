@@ -1,6 +1,7 @@
 package com.ccapi.springbootinit.controller;
 
 import cn.hutool.core.io.FileUtil;
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.common.BaseResponse;
 import com.ccapi.springbootinit.common.ErrorCode;
 import com.ccapi.springbootinit.common.ResultUtils;
@@ -8,7 +9,6 @@ import com.ccapi.springbootinit.constant.FileConstant;
 import com.ccapi.springbootinit.exception.BusinessException;
 import com.ccapi.springbootinit.manager.CosManager;
 import com.ccapi.springbootinit.model.dto.file.UploadFileRequest;
-import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.model.enums.FileUploadBizEnum;
 import com.ccapi.springbootinit.service.UserService;
 import java.io.File;

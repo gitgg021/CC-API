@@ -1,7 +1,8 @@
 package com.ccapi.springbootinit.mapper;
 
-import com.ccapi.springbootinit.model.entity.User;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ccapi.ccapicommon.model.entity.User;
 
 /**
 * @author 60500

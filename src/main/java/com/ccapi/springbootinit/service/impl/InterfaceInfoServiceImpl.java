@@ -1,9 +1,9 @@
 package com.ccapi.springbootinit.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ccapi.ccapicommon.model.entity.InterfaceInfo;
 import com.ccapi.springbootinit.common.ErrorCode;
 import com.ccapi.springbootinit.exception.BusinessException;
-import com.ccapi.springbootinit.model.entity.InterfaceInfo;
 import com.ccapi.springbootinit.service.InterfaceInfoService;
 import com.ccapi.springbootinit.mapper.InterfaceInfoMapper;
 import org.apache.commons.lang3.StringUtils;

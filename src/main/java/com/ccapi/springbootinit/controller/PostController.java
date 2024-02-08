@@ -2,6 +2,7 @@ package com.ccapi.springbootinit.controller;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.annotation.AuthCheck;
 import com.ccapi.springbootinit.common.BaseResponse;
 import com.ccapi.springbootinit.common.DeleteRequest;
@@ -15,7 +16,6 @@ import com.ccapi.springbootinit.model.dto.post.PostEditRequest;
 import com.ccapi.springbootinit.model.dto.post.PostQueryRequest;
 import com.ccapi.springbootinit.model.dto.post.PostUpdateRequest;
 import com.ccapi.springbootinit.model.entity.Post;
-import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.service.PostService;
 import com.ccapi.springbootinit.service.UserService;
 import java.util.List;

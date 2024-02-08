@@ -1,7 +1,7 @@
 package com.ccapi.springbootinit.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.ccapi.springbootinit.model.entity.User;
+import com.ccapi.ccapicommon.model.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
 

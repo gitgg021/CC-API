@@ -1,11 +1,11 @@
 package com.ccapi.springbootinit.controller;
 
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.common.BaseResponse;
 import com.ccapi.springbootinit.common.ErrorCode;
 import com.ccapi.springbootinit.common.ResultUtils;
 import com.ccapi.springbootinit.exception.BusinessException;
 import com.ccapi.springbootinit.model.dto.postthumb.PostThumbAddRequest;
-import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.service.PostThumbService;
 import com.ccapi.springbootinit.service.UserService;
 import javax.annotation.Resource;

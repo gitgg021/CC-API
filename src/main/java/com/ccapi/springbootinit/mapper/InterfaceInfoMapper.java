@@ -1,7 +1,8 @@
 package com.ccapi.springbootinit.mapper;
 
-import com.ccapi.springbootinit.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.ccapi.ccapicommon.model.entity.InterfaceInfo;
+
 
 /**
 * @author 60500

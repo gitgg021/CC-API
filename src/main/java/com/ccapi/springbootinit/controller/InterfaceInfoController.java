@@ -2,6 +2,8 @@ package com.ccapi.springbootinit.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.ccapi.ccapicommon.model.entity.InterfaceInfo;
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.annotation.AuthCheck;
 import com.ccapi.springbootinit.common.*;
 import com.ccapi.springbootinit.constant.CommonConstant;
@@ -10,8 +12,6 @@ import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoAddRequest;
 import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoInvokeRequest;
 import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoQueryRequest;
 import com.ccapi.springbootinit.model.dto.interfaceinfo.InterfaceInfoUpdateRequest;
-import com.ccapi.springbootinit.model.entity.InterfaceInfo;
-import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.model.enums.InterfaceInfoStatusEnum;
 import com.ccapi.springbootinit.service.InterfaceInfoService;
 import com.ccapi.springbootinit.service.UserService;

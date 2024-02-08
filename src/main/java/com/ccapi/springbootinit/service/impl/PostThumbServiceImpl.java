@@ -2,12 +2,12 @@ package com.ccapi.springbootinit.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.springbootinit.common.ErrorCode;
 import com.ccapi.springbootinit.exception.BusinessException;
 import com.ccapi.springbootinit.mapper.PostThumbMapper;
 import com.ccapi.springbootinit.model.entity.Post;
 import com.ccapi.springbootinit.model.entity.PostThumb;
-import com.ccapi.springbootinit.model.entity.User;
 import com.ccapi.springbootinit.service.PostService;
 import com.ccapi.springbootinit.service.PostThumbService;
 import javax.annotation.Resource;
