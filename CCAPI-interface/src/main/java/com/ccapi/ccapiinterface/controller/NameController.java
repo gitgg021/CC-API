@@ -5,6 +5,12 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+
+/**
+ * 名称 API
+ *
+ */
+
 @RestController
 @RequestMapping("/name")
 public class NameController {
@@ -23,7 +29,7 @@ public class NameController {
     @PostMapping("/user")
     public String getUsernameByPost(@RequestBody User user, HttpServletRequest request){
 
-        String accessKey = request.getHeader("accessKey");
+    /*    String accessKey = request.getHeader("accessKey");
         String nonce = request.getHeader("nonce");
         String timestamp = request.getHeader("timestamp");
         String sign = request.getHeader("sign");
@@ -41,7 +47,7 @@ public class NameController {
         String serverSign = SignUtils.genSign(body, "hanhan");
         if(!sign.equals(serverSign)){
             throw new RuntimeException("无权限");
-        }
+        }*/
         String result = "POST 你的名字是" + user.getUsername();
         // 调用成功后 : 次数加 1
         return result;

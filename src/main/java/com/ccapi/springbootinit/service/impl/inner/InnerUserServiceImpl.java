@@ -3,6 +3,8 @@ package com.ccapi.springbootinit.service.impl.inner;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
+
 import com.ccapi.ccapicommon.model.entity.User;
 import com.ccapi.ccapicommon.service.InnerUserService;
 import com.ccapi.springbootinit.common.ErrorCode;
@@ -19,11 +21,13 @@ public class InnerUserServiceImpl implements InnerUserService {
 
     @Override
     public User getInvokeUser(String accessKey) {
-        if(StringUtils.isAnyBlank(accessKey)){
+        if (StringUtils.isAnyBlank(accessKey)) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("accessKey",accessKey);
+        queryWrapper.eq("accessKey", accessKey);
         return userMapper.selectOne(queryWrapper);
     }
+
+
 }
