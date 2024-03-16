@@ -50,8 +50,8 @@ OpenAPI 前端代码生成
 ### 用户查看接口页
 ![image](https://github.com/gitgg021/CC-API/blob/master/images/用户查看接口页.png)
 ### 用户接口详情页
-![image](https://github.com/gitgg021/AI-Chart/blob/master/images/用户接口详情页.png)
+![image](https://github.com/gitgg021/CC-API/blob/master/images/用户接口详情页.png)
 ### 管理页-接口管理
-![image](https://github.com/gitgg021/AI-Chart/blob/master/images/管理页-接口管理.png)
+![image](https://github.com/gitgg021/CC-API/blob/master/images/管理页-接口管理.png)
 ### 管理页接口分析页
-![image](https://github.com/gitgg021/AI-Chart/blob/master/images/管理页接口分析页.png)
+![image](https://github.com/gitgg021/CC-API/blob/master/images/管理页接口分析页.png)
